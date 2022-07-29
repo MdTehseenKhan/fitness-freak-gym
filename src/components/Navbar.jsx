@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import ThemeMode from "./ThemeMode"
 
 import Logo from "../assets/images/Logo.png"
 
@@ -15,19 +16,25 @@ const Navbar = () => {
                 className="w-6, h-6 mx-0 my-5"
               />
             </Link>
-            <span className="ml-3 text-2xl">Fitness Freak</span>
+            <span className="ml-3 text-2xl dark:text-gray-100">
+              Fitness Freak
+            </span>
           </a>
           <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
-            <Link to="/" className="mr-5 hover:text-indigo-900">
+            <Link
+              to="/"
+              className="mr-5 hover:text-indigo-900 dark:text-gray-100 dark:hover:text-indigo-400"
+            >
               Home
             </Link>
+            <a
+              href="#exercises"
+              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base mt-0 dark:text-gray-100 dark:hover:text-indigo-400"
+            >
+              Exercises
+            </a>
+            <ThemeMode />
           </nav>
-          <a
-            href="#exercises"
-            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-0"
-          >
-            Exercises
-          </a>
         </div>
       </header>
     </>
