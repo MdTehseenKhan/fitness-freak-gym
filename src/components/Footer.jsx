@@ -6,15 +6,15 @@ const Footer = () => {
       <footer className="text-gray-600 body-font">
         <div className="px-6 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <Link to="/">
-            <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 dark:text-gray-100">
               <span className="ml-3 text-xl">Fitness Freak</span>
             </span>
           </Link>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 dark:text-gray-100">
             © 2022 Fitness Freak —
             <a
               href="https://twitter.com/m_tehseen_khan"
-              className="text-gray-600 ml-1"
+              className="text-gray-600 ml-1 dark:text-gray-100"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -23,7 +23,7 @@ const Footer = () => {
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
-              className="text-gray-500"
+              className="text-gray-500 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400"
               href="https://www.facebook.com/muhammadtehseen.khan.986"
             >
               <svg
@@ -38,7 +38,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className="ml-3 text-gray-500"
+              className="ml-3 text-gray-500 dark:text-gray-300 hover:text-cyan-700 dark:hover:text-cyan-400"
               href="https://twitter.com/m_tehseen_khan"
             >
               <svg
@@ -53,7 +53,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className="ml-3 text-gray-500"
+              className="ml-3 text-gray-500 dark:text-gray-300 hover:text-pink-700 dark:hover:text-pink-400"
               href="https://www.instagram.com/ig_haiwaan_not0p/"
             >
               <svg
@@ -70,7 +70,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className="ml-3 text-gray-500"
+              className="ml-3 text-gray-500 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-500"
               href="https://linkedin.com/in/muhammad-tehseen-khan-159825172"
             >
               <svg

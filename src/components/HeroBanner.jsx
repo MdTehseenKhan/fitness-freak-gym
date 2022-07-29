@@ -31,7 +31,7 @@ const HeroBanner = () => {
             Explore Exercises
           </a>
         </div>
-        <div className="opacity-10 hidden sm:block font-semibold text-[200px] text-indigo-600 -z-10 absolute top-20 md:top-96 -left-20 md:left-20 pointer-events-none">
+        <div className="opacity-10 hidden sm:block font-semibold text-[200px] text-indigo-600 -z-10 absolute top-20 md:top-96 -left-20 md:left-20 pointer-events-none dark:text-gray-500">
           Exercises
         </div>
       </div>

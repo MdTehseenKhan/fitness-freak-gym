@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left">
         <div className="mx-auto flex flex-wrap px-5 py-1 flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <Link to="/">
               <img
                 src={Logo}
@@ -19,7 +19,7 @@ const Navbar = () => {
             <span className="ml-3 text-2xl dark:text-gray-100">
               Fitness Freak
             </span>
-          </a>
+          </div>
           <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
             <Link
               to="/"
@@ -33,8 +33,10 @@ const Navbar = () => {
             >
               Exercises
             </a>
-            <ThemeMode />
           </nav>
+        </div>
+        <div className="absolute left-52 top-3 md:left-auto md:right-5 md:top-5">
+          <ThemeMode />
         </div>
       </header>
     </>
