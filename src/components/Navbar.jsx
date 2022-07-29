@@ -5,8 +5,8 @@ import Logo from "../assets/images/Logo.png"
 const Navbar = () => {
   return (
     <>
-      <header className="text-gray-600 body-font">
-        <div className="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left">
+        <div className="mx-auto flex flex-wrap px-5 py-1 flex-row items-center">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <Link to="/">
               <img
@@ -17,14 +17,17 @@ const Navbar = () => {
             </Link>
             <span className="ml-3 text-2xl">Fitness Freak</span>
           </a>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
             <Link to="/" className="mr-5 hover:text-indigo-900">
               Home
             </Link>
           </nav>
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+          <a
+            href="#exercises"
+            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-0"
+          >
             Exercises
-          </button>
+          </a>
         </div>
       </header>
     </>
