@@ -1,7 +1,17 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { fetchData, exerciseOptions } from "../utils/fetchData"
 
 const SearchExercises = () => {
   const [search, setSearch] = useState()
+
+  const handleSearch = async (e) => {
+    e.preventDefault()
+    const exerciseData = await fetchData(
+      "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+      exerciseOptions,
+    )
+    console.log(exerciseData)
+  }
 
   return (
     <>

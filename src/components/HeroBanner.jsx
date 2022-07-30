@@ -12,7 +12,7 @@ const HeroBanner = () => {
       </div>
       {/* <section className="text-gray-600 body-font">
         <div className="mx-auto flex md:flex-row flex-col items-center md:items-start overflow-hidden"> */}
-      <div className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-28 md:mb-0 items-center text-center relative md:px-20 md:py-20 lg:py-36 md:h-screen">
+      <div className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-28 md:mb-0 items-center text-center relative py-10 md:px-20 md:py-20 lg:py-36 md:min-h-screen">
         <h1 className="title-font text-3xl mb-6 font-semibold text-indigo-900 dark:text-indigo-400">
           Welcome Dear!
         </h1>
@@ -31,7 +31,7 @@ const HeroBanner = () => {
             Explore Exercises
           </a>
         </div>
-        <div className="opacity-10 hidden sm:block font-semibold text-[200px] text-indigo-600 -z-10 absolute top-20 md:top-96 -left-20 md:left-20 pointer-events-none dark:text-gray-500">
+        <div className="opacity-10 hidden sm:block font-semibold text-[200px] text-indigo-900 -z-10 absolute top-20 md:top-96 -left-20 md:left-20 pointer-events-none dark:text-gray-500">
           Exercises
         </div>
       </div>

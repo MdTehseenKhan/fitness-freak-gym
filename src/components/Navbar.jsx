@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <>
       <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left">
-        <div className="mx-auto flex flex-wrap px-5 py-1 flex-row items-center">
-          <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <div className="mx-auto flex flex-wrap px-5 py-1 md:flex-row justify-center items-center mb-3 flex-col">
+          <div className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
             <Link to="/">
               <img
                 src={Logo}
@@ -20,22 +20,22 @@ const Navbar = () => {
               Fitness Freak
             </span>
           </div>
-          <nav className="ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link
               to="/"
-              className="mr-5 hover:text-indigo-900 dark:text-gray-100 dark:hover:text-indigo-400"
+              className="mr-2 p-2 hover:text-indigo-800 dark:text-gray-100 dark:hover:text-indigo-400"
             >
               Home
             </Link>
             <a
               href="#exercises"
-              className="inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base mt-0 dark:text-gray-100 dark:hover:text-indigo-400"
+              className="hover:text-indigo-800 p-2 dark:text-gray-100 dark:hover:text-indigo-400"
             >
               Exercises
             </a>
           </nav>
         </div>
-        <div className="absolute left-52 top-3 md:left-auto md:right-5 md:top-5">
+        <div className="absolute right-5 top-5">
           <ThemeMode />
         </div>
       </header>
