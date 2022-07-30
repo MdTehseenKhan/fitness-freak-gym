@@ -5,3 +5,18 @@
 body {
   @apply bg-gray-100 dark:bg-slate-800 overflow-x-hidden;
 }
+
+/*Horizontal Scrollbar*/
+
+.left-arrow,
+.right-arrow {
+  @apply cursor-pointer bg-transparent outline-none border-none flex items-center justify-center text-indigo-700 text-2xl rounded absolute -bottom-5 right-20 transition hover:scale-125;
+}
+
+.left-arrow {
+  @apply right-36;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  @apply overflow-x-hidden;
+}

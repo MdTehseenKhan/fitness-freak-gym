@@ -25,6 +25,7 @@ const Footer = () => {
             <a
               className="text-gray-500 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400"
               href="https://www.facebook.com/muhammadtehseen.khan.986"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -40,6 +41,7 @@ const Footer = () => {
             <a
               className="ml-3 text-gray-500 dark:text-gray-300 hover:text-cyan-700 dark:hover:text-cyan-400"
               href="https://twitter.com/m_tehseen_khan"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -55,6 +57,7 @@ const Footer = () => {
             <a
               className="ml-3 text-gray-500 dark:text-gray-300 hover:text-pink-700 dark:hover:text-pink-400"
               href="https://www.instagram.com/ig_haiwaan_not0p/"
+              target="_blank"
             >
               <svg
                 fill="none"
@@ -72,6 +75,7 @@ const Footer = () => {
             <a
               className="ml-3 text-gray-500 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-500"
               href="https://linkedin.com/in/muhammad-tehseen-khan-159825172"
+              target="_blank"
             >
               <svg
                 fill="currentColor"

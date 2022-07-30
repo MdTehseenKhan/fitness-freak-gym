@@ -1,17 +1,44 @@
 import { useState, useEffect } from "react"
 import { fetchData, exerciseOptions } from "../utils/fetchData"
+import HorizontalScrollbar from "./HorizontalScrollbar"
 
-const SearchExercises = () => {
-  const [search, setSearch] = useState()
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
+  const [search, setSearch] = useState("")
+  const [bodyParts, setBodyParts] = useState([])
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    const exerciseData = await fetchData(
-      "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-      exerciseOptions,
+    if (search === "") return
+
+    const exercisesData = await fetchData(
+      "https://exercisedb.p.rapidapi.com/exercises",
+      exerciseOptions
     )
-    console.log(exerciseData)
+
+    const searchedExercises = exercisesData.filter(
+      (exercise) =>
+        exercise.name.inculdes(search) ||
+        exercise.target.inculdes(search) ||
+        exercise.bodyPart.inculdes(search) ||
+        exercise.equipment.inculdes(search)
+    )
+
+    setSearch("")
+    setExercises(searchedExercises)
   }
+
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      const bodyPartsData = await fetchData(
+        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+        exerciseOptions
+      )
+
+      setBodyParts(["all", ...bodyPartsData])
+    }
+
+    fetchExercisesData()
+  }, [])
 
   return (
     <>
@@ -23,7 +50,7 @@ const SearchExercises = () => {
         </div>
 
         {/* SearchBar */}
-        <form className="container m-auto">
+        <form onSubmit={handleSearch} className="container m-auto">
           <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -50,12 +77,12 @@ const SearchExercises = () => {
             </div>
             <input
               type="search"
-              id="default-search"
-              className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search Exercises..."
-              required
               value={search}
               onChange={(e) => setSearch(e.target.value.toLowerCase())}
+              placeholder="Search Exercises..."
+              id="default-search"
+              className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
             />
             <button
               onClick={handleSearch}
@@ -65,6 +92,15 @@ const SearchExercises = () => {
             </button>
           </div>
         </form>
+
+        {/* Horizontal Scrollbar */}
+        <div className="p-5 w-full relative">
+          <HorizontalScrollbar
+            data={bodyParts}
+            bodyPart={bodyPart}
+            setBodyPart={setBodyPart}
+          />
+        </div>
       </section>
     </>
   )
