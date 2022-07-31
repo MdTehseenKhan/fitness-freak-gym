@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react"
+import { useExercisesData } from "../contexts/ExercisesDataContext"
+import ExerciseCard from "./ExerciseCard"
 
-import { exerciseOptions, fetchData } from "../utils/fetchData"
+const Exercises = () => {
+  const { exercises, setExercises, bodyPart } = useExercisesData()
 
-const Exercises = ({ exercises, setExercises, bodyPart }) => {
-  console.log(exercises)
   return (
     <div className="mt-12 p-5 lg:mt-28">
-      <h3 className="text-3xl mb-12 font-semibold">Showing Results</h3>
+      <h3 className="text-3xl mb-12 font-semibold dark:text-gray-100">
+        Showing Results
+      </h3>
       <div className="flex flex-row flex-wrap justify-center gap-12 lg:gap-28">
         {exercises?.map((exercise) => (
-          <p>{exercise.name}</p>
+          <ExerciseCard key={exercise.id} exercise={exercise} />
         ))}
       </div>
     </div>

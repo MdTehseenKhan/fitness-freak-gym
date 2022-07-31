@@ -1,6 +1,9 @@
 import Icon from "../assets/icons/gym.png"
+import { useExercisesData } from "../contexts/ExercisesDataContext"
 
-const BodyPart = ({ item, bodyPart, setBodyPart }) => {
+const BodyPart = ({ item }) => {
+  const { bodyPart, setBodyPart } = useExercisesData()
+
   return (
     <button
       className="flex flex-col items-center justify-center transition hover:scale-105 bg-gray-100 rounded-b-lg w-[270px] h-[280px] gap-y-12 shadow-lg border-solid border-indigo-700 dark:border-indigo-500 dark:bg-gray-700"

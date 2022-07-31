@@ -1,44 +1,29 @@
-import { useState, useEffect } from "react"
+import { useExercisesData } from "../contexts/ExercisesDataContext"
 import { fetchData, exerciseOptions } from "../utils/fetchData"
 import HorizontalScrollbar from "./HorizontalScrollbar"
 
-const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
-  const [search, setSearch] = useState("")
-  const [bodyParts, setBodyParts] = useState([])
+const SearchExercises = () => {
+  const { exercises, setExercises, search, setSearch } = useExercisesData()
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    if (search === "") return
-
-    const exercisesData = await fetchData(
-      "https://exercisedb.p.rapidapi.com/exercises",
-      exerciseOptions
-    )
-
-    const searchedExercises = exercisesData.filter(
-      (exercise) =>
-        exercise.name.inculdes(search) ||
-        exercise.target.inculdes(search) ||
-        exercise.bodyPart.inculdes(search) ||
-        exercise.equipment.inculdes(search)
-    )
-
-    setSearch("")
-    setExercises(searchedExercises)
-  }
-
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+    if (search) {
+      const exercisesData = await fetchData(
+        "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       )
 
-      setBodyParts(["all", ...bodyPartsData])
+      const searchedExercises = exercisesData?.filter((exercise) => {
+        return (
+          exercise.name.toLowerCase().includes(search) ||
+          exercise.target.toLowerCase().includes(search) ||
+          exercise.bodyPart.toLowerCase().includes(search) ||
+          exercise.equipment.toLowerCase().includes(search)
+        )
+      })
+      setExercises(searchedExercises)
     }
-
-    fetchExercisesData()
-  }, [])
+  }
 
   return (
     <>
@@ -95,11 +80,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
         {/* Horizontal Scrollbar */}
         <div className="p-5 w-full relative">
-          <HorizontalScrollbar
-            data={bodyParts}
-            bodyPart={bodyPart}
-            setBodyPart={setBodyPart}
-          />
+          <HorizontalScrollbar />
         </div>
       </section>
     </>

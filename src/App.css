@@ -20,3 +20,7 @@ body {
 .react-horizontal-scrolling-menu--scroll-container {
   @apply overflow-x-hidden;
 }
+
+.exercise-card {
+  @apply w-72 sm:w-80 h-[445px] bg-gray-100 border-t-8 border-indigo-700 rounded-b-lg flex flex-col justify-between pb-3 shadow-lg transition hover:scale-105 dark:border-indigo-500 dark:bg-gray-700;
+}
