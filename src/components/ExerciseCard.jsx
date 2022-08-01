@@ -4,9 +4,9 @@ const ExerciseCard = ({ exercise }) => {
   const { id, name, target, bodyPart, equipment, gifUrl } = exercise
   return (
     <Link to={`/exercise/${id}`} className="exercise-card">
-      <img src={gifUrl} alt={name} />
+      <img src={gifUrl} alt={name} loading="lazy" />
 
-      <div className="flex flex-row">
+      <div className="flex flex-row pt-3">
         <button className="px-3 py-1 ml-5  text-white bg-pink-600 text-sm  rounded-3xl capitalize dark:bg-orange-500">
           {bodyPart}
         </button>

@@ -1,19 +1,14 @@
 import { useExercisesData } from "../contexts/ExercisesDataContext"
-import { fetchData, exerciseOptions } from "../utils/fetchData"
 import HorizontalScrollbar from "./HorizontalScrollbar"
 
 const SearchExercises = () => {
-  const { exercises, setExercises, search, setSearch } = useExercisesData()
+  const { exercises, setSearchedExercises, search, setSearch } =
+    useExercisesData()
 
   const handleSearch = async (e) => {
     e.preventDefault()
     if (search) {
-      const exercisesData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises",
-        exerciseOptions
-      )
-
-      const searchedExercises = exercisesData?.filter((exercise) => {
+      const searchedExercises = exercises?.filter((exercise) => {
         return (
           exercise.name.toLowerCase().includes(search) ||
           exercise.target.toLowerCase().includes(search) ||
@@ -21,7 +16,8 @@ const SearchExercises = () => {
           exercise.equipment.toLowerCase().includes(search)
         )
       })
-      setExercises(searchedExercises)
+      setSearchedExercises(searchedExercises)
+      window.scrollTo({ top: 1700, behavior: "smooth" })
     }
   }
 

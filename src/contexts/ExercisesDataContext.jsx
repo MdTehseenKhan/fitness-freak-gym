@@ -9,6 +9,7 @@ export const ExercisesDataProvider = ({ children }) => {
 
   const [bodyPart, setBodyPart] = useState("all")
   const [exercises, setExercises] = useState([])
+  const [searchedExercises, setSearchedExercises] = useState([])
 
   useEffect(() => {
     const getAllExercises = async () => {
@@ -17,8 +18,8 @@ export const ExercisesDataProvider = ({ children }) => {
         exerciseOptions
       )
       setExercises(exercisesData)
+      setSearchedExercises(exercisesData)
     }
-    getAllExercises()
 
     const getBodyParts = async () => {
       const bodyPartsData = await fetchData(
@@ -27,7 +28,10 @@ export const ExercisesDataProvider = ({ children }) => {
       )
       setBodyParts(["all", ...bodyPartsData])
     }
-    getBodyParts()
+
+    // getAllExercises()
+    // getBodyParts()
+    //
   }, [])
 
   return (
@@ -40,7 +44,8 @@ export const ExercisesDataProvider = ({ children }) => {
         bodyPart,
         setBodyPart,
         exercises,
-        setExercises,
+        searchedExercises,
+        setSearchedExercises,
       }}
     >
       {children}
