@@ -11,6 +11,10 @@ export const ExercisesDataProvider = ({ children }) => {
   const [exercises, setExercises] = useState([])
   const [searchedExercises, setSearchedExercises] = useState([])
 
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const exercisesPerPage = 10
+
   useEffect(() => {
     const getAllExercises = async () => {
       const exercisesData = await fetchData(
@@ -34,6 +38,22 @@ export const ExercisesDataProvider = ({ children }) => {
     //
   }, [])
 
+  useEffect(() => {
+    const getExercisesByBodyParts = async () => {
+      if (bodyPart === "all") {
+        setSearchedExercises(exercises)
+        return
+      }
+
+      const exercisesDataByBodyParts = await fetchData(
+        `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+        exerciseOptions
+      )
+      setSearchedExercises(exercisesDataByBodyParts)
+    }
+    // getExercisesByBodyParts()
+  }, [bodyPart])
+
   return (
     <ExercisesContext.Provider
       value={{
@@ -46,6 +66,9 @@ export const ExercisesDataProvider = ({ children }) => {
         exercises,
         searchedExercises,
         setSearchedExercises,
+        currentPage,
+        setCurrentPage,
+        exercisesPerPage,
       }}
     >
       {children}

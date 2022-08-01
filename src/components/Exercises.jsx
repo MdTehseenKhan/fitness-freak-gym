@@ -3,7 +3,15 @@ import ExerciseCard from "./ExerciseCard"
 import Pagination from "./Pagination"
 
 const Exercises = () => {
-  const { searchedExercises } = useExercisesData()
+  const { searchedExercises, currentPage, exercisesPerPage } =
+    useExercisesData()
+
+  const indexOfLastExercise = currentPage * exercisesPerPage
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage
+  const currentExercises = searchedExercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise
+  )
 
   return (
     <div className="mt-12 p-5 lg:mt-28">
@@ -11,9 +19,9 @@ const Exercises = () => {
         Showing Results
       </h3>
 
-      <div className="flex flex-row flex-wrap justify-center gap-12 lg:gap-28">
+      <div className="flex flex-row flex-wrap justify-center gap-12">
         {searchedExercises &&
-          searchedExercises?.map((exercise) => (
+          currentExercises?.map((exercise) => (
             <ExerciseCard key={exercise.id} exercise={exercise} />
           ))}
       </div>
