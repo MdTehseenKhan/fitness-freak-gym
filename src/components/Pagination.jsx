@@ -4,10 +4,8 @@ const Pagination = () => {
   const { searchedExercises, currentPage, setCurrentPage, exercisesPerPage } =
     useExercisesData()
 
-  const totalNumberOfPages = Math.ceil(
-    searchedExercises.length / exercisesPerPage
-  )
-  // const totalNumberOfPages = 20
+  // const totalNumberOfPages = Math.ceil(searchedExercises.length / exercisesPerPage )
+  const totalNumberOfPages = 100
 
   const numberOfPages = []
   for (let i = 1; i <= totalNumberOfPages; i++) {
@@ -37,7 +35,7 @@ const Pagination = () => {
 
         {/* Numbers */}
         {numberOfPages?.map((number) => {
-          if (number >= currentPage && currentPage + 7 > number) {
+          if (currentPage + 7 > number) {
             return (
               <button
                 key={number}

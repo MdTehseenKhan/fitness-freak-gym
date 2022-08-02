@@ -2,10 +2,12 @@ import { useExercisesData } from "../contexts/ExercisesDataContext"
 import HorizontalScrollbar from "./HorizontalScrollbar"
 
 const SearchExercises = () => {
-  const { exercises, setSearchedExercises, search, setSearch } =
+  const { exercises, setSearchedExercises, search, setSearch, setLoading } =
     useExercisesData()
 
   const handleSearch = async (e) => {
+    setLoading(true)
+
     e.preventDefault()
     if (search) {
       const searchedExercises = exercises?.filter((exercise) => {
@@ -19,6 +21,8 @@ const SearchExercises = () => {
       setSearchedExercises(searchedExercises)
       window.scrollTo({ top: 1700, behavior: "smooth" })
     }
+
+    setLoading(false)
   }
 
   return (
