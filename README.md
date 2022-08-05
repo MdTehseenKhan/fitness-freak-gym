@@ -1,4 +1,4 @@
-# Welcome to My Fitness App:
+# Welcome to Fitness Freak:
 
 ![Thumbnail](./public/website-thumbnail.png)
 
