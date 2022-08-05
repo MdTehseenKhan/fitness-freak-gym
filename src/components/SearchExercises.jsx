@@ -23,7 +23,7 @@ const SearchExercises = () => {
 
   return (
     <>
-      <section className="font-body mt-0 lg:mt-16">
+      <section className="font-body mt-0 lg:mt-16" id="exercises">
         <div className="">
           <div className="text-3xl md:text-5xl font-bold text-center mb-20 dark:text-gray-200">
             Awesome Exercises <br /> You Should Know

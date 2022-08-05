@@ -13,7 +13,9 @@ const Navbar = () => {
             <Link to="/">
               <img src={Logo} alt="Fitness Craze" className="w-6, h-6 mx-0 my-5" />
             </Link>
-            <span className="ml-3 text-2xl dark:text-gray-100">Fitness Freak</span>
+            <Link to="/">
+              <span className="ml-3 text-2xl dark:text-gray-100">Fitness Freak</span>
+            </Link>
           </div>
           <nav className="flex flex-wrap items-center text-base justify-center">
             <Link to="/" className="mr-2 p-2 hover:text-indigo-800 dark:text-gray-100 dark:hover:text-indigo-400">
