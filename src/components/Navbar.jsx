@@ -6,37 +6,26 @@ import Logo from "../assets/images/Logo.png"
 const Navbar = () => {
   return (
     <>
-      <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left">
-        <div className="mx-auto flex flex-wrap px-5 py-1 md:flex-row justify-center items-center mb-3 flex-col">
+      {/* <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left"> */}
+      <header className="mb-16 text-gray-600 body-font w-full shadow dark:border-b dark:border-b-slate-700">
+        <div className="container mx-auto flex flex-wrap px-5 py-1 md:flex-row justify-between items-center pb-3 flex-col md:pb-0">
           <div className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
             <Link to="/">
-              <img
-                src={Logo}
-                alt="Fitness Craze"
-                className="w-6, h-6 mx-0 my-5"
-              />
+              <img src={Logo} alt="Fitness Craze" className="w-6, h-6 mx-0 my-5" />
             </Link>
-            <span className="ml-3 text-2xl dark:text-gray-100">
-              Fitness Freak
-            </span>
+            <span className="ml-3 text-2xl dark:text-gray-100">Fitness Freak</span>
           </div>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Link
-              to="/"
-              className="mr-2 p-2 hover:text-indigo-800 dark:text-gray-100 dark:hover:text-indigo-400"
-            >
+          <nav className="flex flex-wrap items-center text-base justify-center">
+            <Link to="/" className="mr-2 p-2 hover:text-indigo-800 dark:text-gray-100 dark:hover:text-indigo-400">
               Home
             </Link>
-            <a
-              href="#exercises"
-              className="hover:text-indigo-800 p-2 dark:text-gray-100 dark:hover:text-indigo-400"
-            >
+            <a href="#exercises" className="hover:text-indigo-800 p-2 dark:text-gray-100 dark:hover:text-indigo-400">
               Exercises
             </a>
+            <div className="mx-2">
+              <ThemeMode />
+            </div>
           </nav>
-        </div>
-        <div className="absolute right-5 top-5">
-          <ThemeMode />
         </div>
       </header>
     </>

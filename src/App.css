@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  @apply w-0;
+}
+
 body {
-  @apply bg-gray-100 dark:bg-slate-800 overflow-x-hidden;
+  @apply bg-gray-100 dark:bg-slate-800;
 }
 
 /*Horizontal Scrollbar*/
 
 .left-arrow,
 .right-arrow {
-  @apply cursor-pointer bg-transparent outline-none border-none flex items-center justify-center text-indigo-700 text-2xl rounded absolute -bottom-5 right-20 transition hover:scale-125;
-}
-
-.left-arrow {
-  @apply right-36;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-  @apply overflow-x-hidden;
+  @apply cursor-pointer bg-transparent outline-none border-none flex items-center justify-between text-indigo-700 text-2xl rounded absolute -bottom-5 transition hover:scale-125;
 }
 
 .exercise-card {

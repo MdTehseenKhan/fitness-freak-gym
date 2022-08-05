@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 
 const ExerciseCard = ({ exercise }) => {
-  const { id, name, target, bodyPart, equipment, gifUrl } = exercise
+  const { id, name, target, bodyPart, gifUrl } = exercise
+
   return (
     <Link to={`/exercise/${id}`} className="exercise-card">
       <img src={gifUrl} alt={name} loading="lazy" />
@@ -15,9 +16,7 @@ const ExerciseCard = ({ exercise }) => {
         </button>
       </div>
 
-      <h3 className="text-2xl pb-3 ml-5 mt-3 text-slate-900 font-semibold capitalize dark:text-gray-100">
-        {name}
-      </h3>
+      <h3 className="text-2xl pb-3 ml-5 mt-3 text-slate-900 font-semibold capitalize dark:text-gray-100">{name}</h3>
     </Link>
   )
 }

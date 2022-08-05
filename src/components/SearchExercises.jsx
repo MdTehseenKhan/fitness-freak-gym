@@ -1,13 +1,11 @@
 import { useExercisesData } from "../contexts/ExercisesDataContext"
 import HorizontalScrollbar from "./HorizontalScrollbar"
+import CardLoader from "./CardLoader"
 
 const SearchExercises = () => {
-  const { exercises, setSearchedExercises, search, setSearch, setLoading } =
-    useExercisesData()
+  const { exercises, setSearchedExercises, search, setSearch, bodyParts } = useExercisesData()
 
   const handleSearch = async (e) => {
-    setLoading(true)
-
     e.preventDefault()
     if (search) {
       const searchedExercises = exercises?.filter((exercise) => {
@@ -21,8 +19,6 @@ const SearchExercises = () => {
       setSearchedExercises(searchedExercises)
       window.scrollTo({ top: 1700, behavior: "smooth" })
     }
-
-    setLoading(false)
   }
 
   return (
@@ -35,14 +31,11 @@ const SearchExercises = () => {
         </div>
 
         {/* SearchBar */}
-        <form onSubmit={handleSearch} className="container m-auto">
-          <label
-            htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-          >
+        <form onSubmit={handleSearch} className="container mx-auto">
+          <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
             Search
           </label>
-          <div className="relative m-auto w-11/12 md:w-full">
+          <div className=" relative mx-auto w-11/12">
             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <svg
                 aria-hidden="true"
@@ -80,7 +73,8 @@ const SearchExercises = () => {
 
         {/* Horizontal Scrollbar */}
         <div className="p-5 w-full relative">
-          <HorizontalScrollbar />
+          {/*  */}
+          <HorizontalScrollbar data={bodyParts} isBodyParts />
         </div>
       </section>
     </>
