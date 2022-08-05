@@ -72,10 +72,7 @@ const SearchExercises = () => {
         </form>
 
         {/* Horizontal Scrollbar */}
-        <div className="p-5 w-full relative">
-          {/*  */}
-          <HorizontalScrollbar data={bodyParts} isBodyParts />
-        </div>
+        <HorizontalScrollbar data={bodyParts} isBodyParts />
       </section>
     </>
   )

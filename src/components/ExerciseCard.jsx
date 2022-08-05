@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 
 const ExerciseCard = ({ exercise }) => {
+  if (!exercise) return
+
   const { id, name, target, bodyPart, gifUrl } = exercise
 
   return (

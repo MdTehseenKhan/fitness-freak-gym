@@ -3,7 +3,7 @@ import Icon from "../assets/icons/gym.png"
 import { useExercisesData } from "../contexts/ExercisesDataContext"
 
 const BodyPartComp = ({ item }) => {
-  const { bodyPart, setBodyPart } = useExercisesData()
+  const { bodyPart, setBodyPart, setCurrentPage } = useExercisesData()
 
   return (
     <button
@@ -13,6 +13,7 @@ const BodyPartComp = ({ item }) => {
       value={item}
       onClick={() => {
         setBodyPart(item)
+        setCurrentPage(1)
         window.scrollTo({ top: 1700, behavior: "smooth" })
       }}
     >

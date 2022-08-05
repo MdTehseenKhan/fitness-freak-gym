@@ -1,12 +1,9 @@
 import { useExercisesData } from "../contexts/ExercisesDataContext"
 
 const Pagination = () => {
-  const { searchedExercises, currentPage, setCurrentPage, exercisesPerPage } =
-    useExercisesData()
+  const { searchedExercises, currentPage, setCurrentPage, exercisesPerPage } = useExercisesData()
 
-  const totalNumberOfPages = Math.ceil(
-    searchedExercises.length / exercisesPerPage
-  )
+  const totalNumberOfPages = Math.ceil(searchedExercises.length / exercisesPerPage)
 
   const numberOfPages = []
   for (let i = 1; i <= totalNumberOfPages; i++) {
@@ -25,10 +22,7 @@ const Pagination = () => {
         {/* Previous */}
         {currentPage > 1 && (
           <>
-            <button
-              className="pagination-navigation rounded-l-lg"
-              onClick={paginatePrevious}
-            >
+            <button className="pagination-navigation rounded-l-lg" onClick={paginatePrevious}>
               Previous
             </button>
           </>
@@ -48,9 +42,7 @@ const Pagination = () => {
             return (
               <button
                 key={number}
-                className={`pagination-btn ${
-                  number === currentPage && "active"
-                }`}
+                className={`pagination-btn ${number === currentPage && "active"}`}
                 value={number}
                 onClick={paginate}
               >
@@ -62,10 +54,7 @@ const Pagination = () => {
         {/* Next */}
         {currentPage < totalNumberOfPages && (
           <>
-            <button
-              className="pagination-navigation rounded-r-lg"
-              onClick={paginateNext}
-            >
+            <button className="pagination-navigation rounded-r-lg" onClick={paginateNext}>
               Next
             </button>
           </>

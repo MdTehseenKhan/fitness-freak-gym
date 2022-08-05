@@ -55,12 +55,6 @@ export const ExercisesDataProvider = ({ children }) => {
     getExercisesByBodyParts()
   }, [bodyPart])
 
-  //
-  // -------------------------------------------------------------------------------------------------
-  // ExerciseDetail Page
-  // -------------------------------------------------------------------------------------------------
-  //
-
   return (
     <ExercisesContext.Provider
       value={{

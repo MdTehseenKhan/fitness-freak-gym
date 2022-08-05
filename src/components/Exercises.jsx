@@ -14,8 +14,11 @@ const Exercises = () => {
       <h3 className="text-3xl mb-12 font-semibold dark:text-gray-100">Showing Results</h3>
 
       <div className="flex flex-row flex-wrap justify-center gap-12">
-        {searchedExercises &&
-          currentExercises?.map((exercise) => <ExerciseCard key={exercise.id} exercise={exercise} />)}
+        {searchedExercises.length ? (
+          currentExercises?.map((exercise) => <ExerciseCard key={exercise.id} exercise={exercise} />)
+        ) : (
+          <ExerciseCard quantity={10} />
+        )}
       </div>
 
       <div className="pagination mt-24 flex items-center">{searchedExercises.length > 10 && <Pagination />}</div>

@@ -10,13 +10,15 @@ import RightArrowIcon from "../assets/icons/right-arrow.png"
 
 const HorizontalScrollbar = ({ data, isBodyParts }) => {
   return (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-      {data.map((item) => (
-        <div key={item.id || item} title={item.id || item} className="m-10">
-          {isBodyParts ? <BodyPartComp item={item} /> : <ExerciseCard exercise={item} />}
-        </div>
-      ))}
-    </ScrollMenu>
+    <div className="p-5 w-full relative">
+      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+        {data.map((item) => (
+          <div key={item.id || item} title={item.id || item} className="m-10">
+            {isBodyParts ? <BodyPartComp item={item} /> : <ExerciseCard exercise={item} />}
+          </div>
+        ))}
+      </ScrollMenu>
+    </div>
   )
 }
 
