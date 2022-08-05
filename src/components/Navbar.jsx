@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       {/* <header className="text-gray-600 body-font w-full md:w-1/2 md:float-left"> */}
-      <header className="mb-16 text-gray-600 body-font w-full shadow dark:border-b dark:border-b-slate-700">
+      <header className="text-gray-600 body-font w-full shadow dark:border-b dark:border-b-slate-700">
         <div className="container mx-auto flex flex-wrap px-5 py-1 md:flex-row justify-between items-center pb-3 flex-col md:pb-0">
           <div className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
             <Link to="/">
