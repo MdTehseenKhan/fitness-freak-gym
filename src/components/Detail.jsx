@@ -28,8 +28,8 @@ const Detail = ({ exerciseDetail }) => {
         <div className="flex flex-col gap-5 lg:gap-9 dark:text-gray-100">
           <h3 className="text-3xl md:text-5xl font-bold capitalize">{name}</h3>
           <p className="text-lg dark:text-gray-200">
-            Exercises keep you strong. <span className="captalize">{name}</span> is one of the best exercise to target
-            your {target}. It will help you to improve your mood and gain energy.
+            Exercises keep you strong. {name} is one of the best exercise to target your {target}. It will help you to
+            improve your mood and gain energy.
           </p>
 
           {extraDetails?.map(({ icon, name }, i) => (
