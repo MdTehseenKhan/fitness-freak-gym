@@ -32,3 +32,7 @@ body {
 .pagination-btn.active {
   @apply text-indigo-600 bg-indigo-50 hover:bg-indigo-100 hover:text-indigo-700 dark:bg-gray-700 dark:text-white;
 }
+
+.svg-icon path {
+  @apply fill-indigo-700 dark:fill-indigo-500;
+}

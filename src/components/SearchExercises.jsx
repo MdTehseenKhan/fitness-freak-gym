@@ -1,6 +1,7 @@
 import { useExercisesData } from "../contexts/ExercisesDataContext"
 import HorizontalScrollbar from "./HorizontalScrollbar"
 import CardLoader from "./CardLoader"
+import BoxLoader from "./BoxLoader"
 
 const SearchExercises = () => {
   const { exercises, setSearchedExercises, search, setSearch, bodyParts } = useExercisesData()
@@ -72,7 +73,7 @@ const SearchExercises = () => {
         </form>
 
         {/* Horizontal Scrollbar */}
-        <HorizontalScrollbar data={bodyParts} isBodyParts />
+        {bodyParts.length ? <HorizontalScrollbar data={bodyParts} isBodyParts /> : <BoxLoader quantity={3} />}
       </section>
     </>
   )

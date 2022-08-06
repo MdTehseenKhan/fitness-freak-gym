@@ -1,4 +1,5 @@
 import { useExercisesData } from "../contexts/ExercisesDataContext"
+import CardLoader from "./CardLoader"
 import ExerciseCard from "./ExerciseCard"
 import Pagination from "./Pagination"
 
@@ -17,7 +18,7 @@ const Exercises = () => {
         {searchedExercises.length ? (
           currentExercises?.map((exercise) => <ExerciseCard key={exercise.id} exercise={exercise} />)
         ) : (
-          <ExerciseCard quantity={10} />
+          <CardLoader quantity={3} />
         )}
       </div>
 
