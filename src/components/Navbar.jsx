@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import ThemeMode from "./ThemeMode"
 
-import Logo from "../assets/images/Logo.png"
+import Logo from "../assets/images/Logo.svg"
 
 const Navbar = () => {
   return (
@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="container mx-auto flex flex-wrap px-5 py-1 md:flex-row justify-between items-center pb-3 flex-col md:pb-0">
           <div className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
             <Link to="/">
-              <img src={Logo} alt="Fitness Craze" className="w-6, h-6 mx-0 my-5" />
+              <img src={Logo} alt="Fitness Craze" className="w-8, h-8 mx-0 my-5" />
             </Link>
             <Link to="/">
               <span className="ml-3 text-2xl dark:text-gray-100">Fitness Freak</span>

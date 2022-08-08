@@ -7,7 +7,7 @@ const BodyPartComp = ({ item }) => {
 
   return (
     <button
-      className={`flex flex-col items-center justify-center transition hover:scale-105 bg-gray-100 rounded-b-lg w-[270px] h-[280px] gap-y-12 shadow-lg border-solid border-indigo-700 dark:border-indigo-500 dark:bg-gray-700 ${
+      className={`flex flex-col items-center justify-center transition hover:scale-105 bg-gray-100 rounded-b-lg w-[270px] h-[280px] gap-y-12 shadow-lg border-solid border-indigo-700 dark:border-indigo-500 dark:bg-gray-900 ${
         bodyPart === item ? "border-t-4" : ""
       }`}
       value={item}
