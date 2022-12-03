@@ -76,7 +76,7 @@ const Footer = () => {
             </a>
             <a
               className="ml-3 text-gray-500 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-500"
-              href="https://linkedin.com/in/muhammad-tehseen-khan-159825172"
+              href="https://linkedin.com/in/muhammad-tehseen-khan"
               target="_blank"
             >
               <svg
